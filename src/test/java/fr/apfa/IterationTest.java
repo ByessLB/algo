@@ -8,14 +8,21 @@ class IterationTest {
 
     @Test
     void verificationSommeDesEntiersDeZeroAN() {
-        // Given - Arrange
-        Iteration iteration = new Iteration();
 
         // When - Act
-        int result = iteration.sommeEntiers(3);
+        int result = Iteration.sommeEntiers(3);
 
         // Then - Assert
         assertEquals(6, result);
+
+        result = Iteration.sommeEntiers(4);
+        assertEquals(10, result);
+
+        result = Iteration.sommeEntiers(1);
+        assertEquals(1, result);
+
+        result = Iteration.sommeEntiers(-1);
+        assertEquals(0, result);
     }
 
     @Test
