@@ -49,18 +49,22 @@ public class Iteration {
     }
 
     // FizzBuzz
-    public static void fizzBuzz(int n) {
-        for (int index = 0; index <= n; index++) {
+    public static String fizzBuzz(int n) {
+        StringBuilder result = new StringBuilder();
+        for (int index = 1; index <= n; index++) {
             if (index % 3 == 0 && index % 5 == 0) {
-                System.out.println("FizzBuzz");
+                result.append("FizzBuzz");
             } else if (index % 3 == 0) {
-                System.out.println("Fizz");
+                result.append("Fizz");
             } else if (index % 5 == 0) {
-                System.out.println("Buzz");
+                result.append("Buzz");
             } else {
-                System.out.println(index);
+                result.append(index);
             }
+            result.append("\n");
         }
+
+        return result.toString();
     }
 
     // Factorielle
