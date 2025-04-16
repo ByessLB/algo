@@ -66,7 +66,7 @@ public class Application {
         }
     }
 
-
+    // ✅
     // Vérification bancaire
     public static void vérificationBancaire() {
         Scanner scanner = new Scanner(System.in);
