@@ -9,10 +9,6 @@ class IterationTest {
     @Test
     void verificationSommeDesEntiersDeZeroAN() {
 
-        // TODO étant donné que la méthode sommeEntiers est déclarée en "public static" il n'est pas nécessaire d'avoir un objet de la classe Iteration pour l'appeler
-        // tu peux directement appelée la méthode en utilisant le nom de la classe
-        // par exemple : Iteration.sommeEntiers(3)
-
         // When - Act
         int result = Iteration.sommeEntiers(3);
 

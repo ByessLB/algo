@@ -12,19 +12,24 @@ public class Iteration {
 
     // TODO ajouter les commentaires en javadoc /** */
     // tu peux également retourner le résultat afin de pouvoir mettre en place des tests unitaires et prendre le mois et les abonnées en paramètres
-    // Abonné.e.s Youtube avec while
-    public static void abonneesYoutubeAvecWhile() {
+
+    /**
+     * Abonné.e.s Youtube avec while
+     */
+    public static int abonneesYoutubeAvecWhile() {
         int mois = 24;
         int index = 1;
         double abonnées = 2500;
+        int total = 0;
 
         System.out.println("Abonné.e.s Youtube : " + abonnées);
 
         while (index <= mois) {
-            int total = (int) Math.ceil(abonnées *= 1.05);
+            total = (int) Math.ceil(abonnées *= 1.05);
             System.out.println("Abonné.e.s Youtube : " + total);
             index++;
         }
+        return total;
     }
 
     // TODO ajouter les commentaires en javadoc /** */
@@ -42,7 +47,11 @@ public class Iteration {
     }
 
     //✅ nice!
-    // Somme des entiers de 0 à n
+    /**
+     * Somme des entiers de 0 à n
+     * @param n
+     * @return
+     */
     public static int sommeEntiers(int n) {
         int somme = 0;
         for (int index = 0; index <= n; index++) {
@@ -53,7 +62,11 @@ public class Iteration {
     }
 
     // ✅checked!
-    // FizzBuzz
+    /**
+     * FizzBuzz
+     * @param n valeur maximale à atteindre
+     * @return la chaine fizzbuzz
+     */
     public static String fizzBuzz(int n) {
         StringBuilder result = new StringBuilder();
         for (int index = 1; index <= n; index++) {
@@ -73,7 +86,11 @@ public class Iteration {
     }
 
     // ✅ okay
-    // Factorielle
+    /**
+     * <h3>Factorielle</h3>
+     * @param n
+     * @return produit des nombres entiers strictement positifs inférieurs ou égaux à <strong>n</strong>.
+     */
     public static int factorielle(int n) {
         int factorielle = 1;
         for (int index = 1; index <= n; index++) {

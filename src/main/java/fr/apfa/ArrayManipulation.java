@@ -30,57 +30,82 @@ public class ArrayManipulation {
 
         // manipulationTableauParSaisie();
 
-        invert(array);
+        // invert(array);
+
+        // sumIndexArray(3, 6, array);
     }
 
     // Recherche séquentielle
 
     // Boucle for
-    public static void forSequentielle() {
-        int[] arrayInt = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+    public static int forSequentielle(int[] array, int n) {
 
-        // TODO pour la condition d'arrêt tu peux plutôt adopter l'approche suivante :
-        // index < arrayInt.length (ça permet de simplifier l'opération)
-        for (int index = 0; index <= arrayInt.length - 1; index++) {
-            if (arrayInt[index] == 50) {
-                System.out.println("Le milieu : " + arrayInt[index]);
+        int result = 0;
+
+        for (int index = 0; index < array.length; index++) {
+            if (array[index] == n) {
+                System.out.println("Le milieu : " + array[index]);
+                result = index;
             }
         }
+
+        return result;
     }
 
     // Boucle while
-    public static void whileSequentielle() {
-        int[] arrayInt = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+    public static int whileSequentielle(int[] arrayInt, int n) {
 
         int index = 0;
-        // TODO pour la condition d'arrêt tu peux plutôt adopter l'approche suivante :
-        // index < arrayInt.length (ça permet de simplifier l'opération)
-        while (index <= arrayInt.length - 1) {
-            if (arrayInt[index] == 40) {
+        int result = 0;
+
+        while (index < arrayInt.length ) {
+            if (arrayInt[index] == n) {
                 System.out.println(arrayInt[index]);
+                result = index;
             }
             index++;
         }
+
+        return result;
     }
 
     // Boucle do.. while
-    public static void doWhileSequentielle() {
-        int[] arrayInt = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };
+    public static int doWhileSequentielle(int[] arrayInt, int n) {
 
         int index = 0;
+        int result = 0;
         do {
-            System.out.println(arrayInt[index]);
+            if(arrayInt[index] == n) {
+                System.out.println(arrayInt[index]);
+                result = index;
+            }
             index++;
-        } while (index <= arrayInt.length - 1);
+        } while (index < arrayInt.length);
+
+        return result;
     }
 
-    // TODO plutôt adopter la déclaration de fonction suivante :
-    // public static int sommeIndexInArray(int[] array, int indexStart, int
-    // indexEnd)
-    // Exemple de fonctionnement : soit le tableau [ 2, 5, 4, 6, 10]
-    // Avec indexStart = 1 et indexENd = 4
-    // on doit avoir 5 + 4 + 6
-    // il est conseillé d'utiliser une boucle
+    /**
+     * Addition des valeurs entre les index données d'un tableau
+     * @param indexA
+     * @param indexB
+     * @param array
+     * @return retourne la somme des valeurs compris entre les 2 index données
+     */
+    public static int sumIndexArray(int indexA, int indexB, int[] array) {
+
+        int sum = 0;
+
+        if (indexA < indexB && indexA < array.length && indexB < array.length && indexA > -1) {
+            for (int index = indexA; index <= indexB; index++) {
+                sum += array[index];
+            }
+        } else {
+            return -1;
+        }
+
+        return sum;
+    }
 
     // Somme entre 2 index et un tableau s'il existe
     public static void sommeIndexInArray(Object... params) {
@@ -180,38 +205,35 @@ public class ArrayManipulation {
         return arrayResult;
     }
 
-    // Echange de valeurs
-    public static boolean swap(int paramA, int paramB, int[] array) {
+    /**
+     * Echange de valeurs entre 2 de valeurs identifié par leur index dans un tableau
+     * @param indexA
+     * @param indexB
+     * @param array
+     * @return On retourne un boolean s'il l'échange ne peu pas être opérable ou est opéré
+     */
+    public static boolean swap(int indexA, int indexB, int[] array) {
         // Vérification du tableau > à 2 indices pour opérer un échange
         if (array.length < 2) {
             return false;
         }
 
-        // Intialisation de valeur en boolean
-        // TODO existe-t-il une solution non basée sur l'utilisation de ces variables
-        // boolA et boolB ?
-        boolean boolA = false;
-        boolean boolB = false;
+        if (indexA < array.length && indexB < array.length && indexA >-1 && indexB > -1) {
+            int tmp = array[indexB];
+            array[indexB] = array[indexA];
+            array[indexA] = tmp;
 
-        // En boucle pour identifier si les indices mis en param sont identifiable dans
-        // le tableau
-        for (int index = 0; index <= array.length - 1; index++) {
-            if (index == paramA) {
-                boolA = true;
-            }
-            if (index == paramB) {
-                boolB = true;
-            }
-        }
-
-        // On vérifie si on retrouve bien les indices
-        if (boolA && boolB) {
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
-    // Calcul de moyenne
+    /**
+     * Calcul de moyenne
+     * @param array
+     * @return
+     */
     public static Integer calculMoyenne(int[] array) {
         try {
             // Initialisation variable
@@ -237,7 +259,9 @@ public class ArrayManipulation {
         }
     }
 
-    // Manipulation de tableau d'entiers et saisie utilisateur
+    /**
+     * Manipulation de tableau d'entiers et saisie utilisateur
+     */
     public static void manipulationTableauParSaisie() {
         // Intégration du scanner
         Scanner scanner = new Scanner(System.in);

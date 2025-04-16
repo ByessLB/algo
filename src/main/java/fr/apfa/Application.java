@@ -1,6 +1,7 @@
 package fr.apfa;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Scanner;
 
@@ -8,7 +9,8 @@ public class Application {
 
     public static void main(String[] args) throws Exception {
 
-        tauxParticipationEmployeur();
+        minMax(5, 9, 1);
+        // tauxParticipationEmployeur();
 
     }
 
@@ -35,15 +37,36 @@ public class Application {
     }
 
     // Touver max / min
-    public static void minMax(int a, int b, int c) {
+    public static String minMax(int a, int b, int c) {
+        int max;
+        int min;
         // TODO pouvons trouver une solution basée sur l'utilisation d'une série de "if" plutôt que l'utilisation de Math.min et Math.max ?
 
-        // Trouver le max
-        int max = Math.max(a, Math.max(b, c));
-        System.out.println("max : " + max);
-        // Trouver le min
-        int min = Math.min(a, Math.min(b, c));
-        System.out.println("min : " + min);
+        // // Trouver le max
+        // int max = Math.max(a, Math.max(b, c));
+        // System.out.println("max : " + max);
+        // // Trouver le min
+        // int min = Math.min(a, Math.min(b, c));
+        // System.out.println("min : " + min);
+
+        if(a > b && a > c) {
+            max = a;
+        } else if (b > a && b > c) {
+            max = b;
+        } else {
+            max = c;
+        }
+
+        if(a < b && a < c) {
+            min = a;
+        } else if (b < a && b < c) {
+            min = b;
+        } else {
+            min = c;
+        }
+
+    int[] array = {min, max};
+    return Arrays.toString(array);
     }
 
     // ✅ okay
