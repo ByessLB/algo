@@ -36,6 +36,8 @@ public class Application {
 
     // Touver max / min
     public static void minMax(int a, int b, int c) {
+        // TODO pouvons trouver une solution basée sur l'utilisation d'une série de "if" plutôt que l'utilisation de Math.min et Math.max ?
+
         // Trouver le max
         int max = Math.max(a, Math.max(b, c));
         System.out.println("max : " + max);
@@ -44,6 +46,7 @@ public class Application {
         System.out.println("min : " + min);
     }
 
+    // ✅ okay
     // Vérification si la lettre est une voyelle ou une consonne
     public static void voyelleConsonne(char a) {
         // Liste des voyelles
@@ -62,6 +65,7 @@ public class Application {
             System.out.println("the char is : 'c'\n");
         }
     }
+
 
     // Vérification bancaire
     public static void vérificationBancaire() {
@@ -151,6 +155,7 @@ public class Application {
             double taux = 0.0; // Taux de base
 
             // Initialisation des parties du taux
+            // TODO est-il possible de trouver une simplification en utilisant uniquement une variable ?
             double part1 = 0.0;
             double part2 = 0.0;
             double part3 = 0.0;

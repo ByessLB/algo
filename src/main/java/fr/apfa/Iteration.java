@@ -10,6 +10,8 @@ public class Iteration {
         // factorielle(5);
     }
 
+    // TODO ajouter les commentaires en javadoc /** */
+    // tu peux également retourner le résultat afin de pouvoir mettre en place des tests unitaires et prendre le mois et les abonnées en paramètres
     // Abonné.e.s Youtube avec while
     public static void abonneesYoutubeAvecWhile() {
         int mois = 24;
@@ -25,6 +27,7 @@ public class Iteration {
         }
     }
 
+    // TODO ajouter les commentaires en javadoc /** */
     // Abonné.e.s Youtube avec for
     public static void abonneesYoutubeAvecFor() {
         int mois = 24;
@@ -38,6 +41,7 @@ public class Iteration {
         }
     }
 
+    //✅ nice!
     // Somme des entiers de 0 à n
     public static int sommeEntiers(int n) {
         int somme = 0;
@@ -48,6 +52,7 @@ public class Iteration {
         return somme;
     }
 
+    // ✅checked!
     // FizzBuzz
     public static void fizzBuzz(int n) {
         for (int index = 0; index <= n; index++) {
@@ -63,6 +68,7 @@ public class Iteration {
         }
     }
 
+    // ✅ okay
     // Factorielle
     public static int factorielle(int n) {
         int factorielle = 1;
