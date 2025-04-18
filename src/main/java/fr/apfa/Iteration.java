@@ -15,11 +15,12 @@ public class Iteration {
 
     /**
      * Abonné.e.s Youtube avec while
+     * @return int total
      */
     public static int abonneesYoutubeAvecWhile() {
         int mois = 24;
-        int index = 1;
         double abonnées = 2500;
+        int index = 1;
         int total = 0;
 
         System.out.println("Abonné.e.s Youtube : " + abonnées);
@@ -32,8 +33,9 @@ public class Iteration {
         return total;
     }
 
-    // TODO ajouter les commentaires en javadoc /** */
-    // Abonné.e.s Youtube avec for
+    /**
+     * Abonné.e.s Youtube avec for
+     */
     public static void abonneesYoutubeAvecFor() {
         int mois = 24;
         double abonnées = 2500;
@@ -63,7 +65,7 @@ public class Iteration {
 
     // ✅checked!
     /**
-     * FizzBuzz
+     * <h3>FizzBuzz</h3>
      * @param n valeur maximale à atteindre
      * @return la chaine fizzbuzz
      */

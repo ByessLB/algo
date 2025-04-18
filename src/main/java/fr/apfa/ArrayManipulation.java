@@ -30,7 +30,7 @@ public class ArrayManipulation {
 
         // manipulationTableauParSaisie();
 
-        // invert(array);
+        invert(array);
 
         // sumIndexArray(3, 6, array);
     }
@@ -316,7 +316,7 @@ public class ArrayManipulation {
     public static int[] invert(int[] array) {
         int[] invertArray = new int[array.length];
 
-        for (int index = 0; index <= array.length; index++) {
+        for (int index = 0; index < array.length; index++) {
             invertArray[index] = array[array.length - 1 - index];
         }
 

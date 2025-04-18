@@ -40,7 +40,6 @@ public class Application {
     public static String minMax(int a, int b, int c) {
         int max;
         int min;
-        // TODO pouvons trouver une solution basée sur l'utilisation d'une série de "if" plutôt que l'utilisation de Math.min et Math.max ?
 
         // // Trouver le max
         // int max = Math.max(a, Math.max(b, c));

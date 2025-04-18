@@ -27,13 +27,9 @@ class IterationTest {
 
     @Test
     void verificationCalculFactorielle() {
-        // Given
-        Iteration iteration = new Iteration();
 
-        // TODO même remarque qu'en ligne 12 pour l'appel de fonction
- 
         // when
-        int result = iteration.factorielle(10);
+        int result = Iteration.factorielle(10);
         // Then
         assertEquals(3628800, result);
     }

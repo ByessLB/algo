@@ -7,7 +7,7 @@ public class ArrayManipulation2D {
         int[][] array2D2 = { { 4, 6, 5, 2 }, { 7, 11, 34, 1 }, { 28, 6, 2, 15 }, { 1, 2, 3, 19 } };
         int width = 4;
         int height = 4;
-        int diagonalType = 1;
+        int diagonalType = 2;
 
         // Appel des méthodes et utilisation des éléments
         // sumArrays(array2D);
@@ -18,16 +18,16 @@ public class ArrayManipulation2D {
      * Somme des valeurs d'un tableau 2D
      * 
      * @param array
-     * @return
+     * @return int
      */
     public static int sumArrays(int[][] array) {
         // Variable de récupération et d'addition
         int result = 0;
 
         // Itération pour récupérer les valeurs du tableau tableau
-        for (int index = 0; index <= array.length - 1; index++) {
-            for (int i = 0; i <= array[index].length - 1; i++) {
-                result += array[index][i];
+        for (int indexRow = 0; indexRow < array.length; indexRow++) {
+            for (int indexColumn = 0; indexColumn < array[indexRow].length; indexColumn++) {
+                result += array[indexRow][indexColumn];
             }
         }
 
@@ -35,28 +35,31 @@ public class ArrayManipulation2D {
         return result;
     }
 
+    /**
+     * Somme des valeurs d'un tableau2D sur une diagonale
+     * 
+     * @param array
+     * @param width     int
+     * @param height    int
+     * @param diagonale int
+     * @return int
+     */
     public static int sommeValeursEnDiagonale(int[][] array, int width, int height, int diagonale) {
 
         int sum = 0;
+        int columnIndex = 0;
+        int diagonalStep = 1;
 
-        if (diagonale < 1 || diagonale > 2 || array == null || width < array.length || height < array.length) {
+        if (array == null || width != height || width != array.length || diagonale < 1 || diagonale > 2) {
             return -1;
-        } else if (diagonale == 1) {
-            for (int index = 0; index < array.length; index++) {
-                for (int i = 0; i <= array[index].length - 1; i++) {
-                    if (i == index) {
-                        sum += array[index][i];
-                    }
-                }
-            }
         } else if (diagonale == 2) {
-            for (int index = array.length; index > 0; index-- ) {
-                for (int i = array[index].length; i > 0; i--) {
-                    if (i == index) {
-                        sum += array[index][i];
-                    }
-                }
-            }
+            columnIndex = array[0].length -1;
+            diagonalStep = -1;
+        }
+
+        for (int index = 0; index < array.length; index++) {
+            sum += array[index][columnIndex];
+            columnIndex += diagonalStep;
         }
 
         System.out.println(sum);
