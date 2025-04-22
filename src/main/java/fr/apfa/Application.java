@@ -9,9 +9,11 @@ public class Application {
 
     public static void main(String[] args) throws Exception {
 
-        minMax(5, 9, 1);
-        // tauxParticipationEmployeur();
+        Scanner scanner = new Scanner(System.in);
+        // minMax(5, 9, 1);
+        tauxParticipationEmployeur(scanner);
 
+        scanner.close();
     }
 
     // Méthode
@@ -106,11 +108,13 @@ public class Application {
         scanner.close();
     }
 
-    // Taux de participation employeur
-    public static void tauxParticipationEmployeur() {
-        Scanner scanner = new Scanner(System.in);
+    /**
+     * Taux de participation de l'employeur
+     */
+    public static void tauxParticipationEmployeur(Scanner scanner) {
+        boolean continuer = true;
 
-        while (true) {
+        do {
             // départ de la saisie
             System.out.println("--- Saisie d'information sur l'employé ---");
             System.out.println("Etat matrimonial (C pour célibataire, A pour autre situation) : ");
@@ -126,7 +130,8 @@ public class Application {
             }
             if (matrimonial == 'N') {
                 System.out.println("Merci d'avoir utilisé notre service !");
-                break;
+                continuer = false;
+                continue;
             }
 
             if (matrimonial != 'C' && matrimonial != 'A') {
@@ -139,7 +144,8 @@ public class Application {
             String caractèreEnfants = scanner.nextLine().toUpperCase();
             if (caractèreEnfants.equals("N")) {
                 System.out.println("Merci d'avoir utilisé notre service !");
-                break;
+                continuer = false;
+                continue;
             }
             int enfants;
             try {
@@ -158,7 +164,8 @@ public class Application {
             String salaireInput = scanner.nextLine().toUpperCase();
             if (salaireInput.equals("N")) {
                 System.out.println("Merci d'avoir utilisé notre service !");
-                break;
+                continuer = false;
+                continue;
             }
 
             double salaire;
@@ -176,33 +183,23 @@ public class Application {
             // Initialisation du taux
             double taux = 0.0; // Taux de base
 
-            // Initialisation des parties du taux
-            // TODO est-il possible de trouver une simplification en utilisant uniquement une variable ?
-            double part1 = 0.0;
-            double part2 = 0.0;
-            double part3 = 0.0;
 
             // Gestion du taux selon état matrimonial
             if (matrimonial == 'C') {
-                part2 = 0.2;
+                taux += 0.2;
             } else if (matrimonial == 'A') {
-                part2 = 0.25;
+                taux += 0.25;
             }
 
             // Gestion du taux selon le nombre d'enfants
             if (enfants > 0) {
-                part3 = 0.15 * enfants;
-            } else {
-                part3 = 0.0;
+                taux += 0.15 * enfants;
             }
 
             // Gestion du taux selon le salaire
             if (salaire <= 1800) {
-                part1 += 0.1;
+                taux += 0.1;
             }
-
-            // Cumul de tous les taux
-            taux = part1 + part2 + part3;
 
             // Gestion du maximum du taux
             if (taux >= 0.5) {
@@ -216,15 +213,14 @@ public class Application {
             char charReponse = scanner.next().charAt(0);
             char reponse = Character.toUpperCase(charReponse);
             if (reponse == 'O') {
-                tauxParticipationEmployeur();
+                continue;
             } else if (reponse == 'N') {
                 System.out.println("Merci d'avoir utilisé notre service !");
-                break;
+                continuer = false;
             } else {
                 System.out.println("Erreur : réponse non valide.");
-                break;
+                continuer = false;
             }
-        }
-        scanner.close();
+        } while (continuer);
     }
 }
