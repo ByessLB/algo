@@ -25,12 +25,11 @@ public class ArrayManipulation {
         // indicesTableau(arrayTest);
 
         // swap(3, 9, arrayTest);
-
-        // calculMoyenne(arrayNegative);
+        // System.out.println(calculMoyenne(arrayNegative));
 
         // manipulationTableauParSaisie();
 
-        invert(array);
+        // invert(array);
 
         // sumIndexArray(3, 6, array);
     }
@@ -38,6 +37,9 @@ public class ArrayManipulation {
     // Recherche séquentielle
 
     // Boucle for
+    // TODO Javadoc
+
+    // ✅ okay
     public static int forSequentielle(int[] array, int n) {
 
         int result = 0;
@@ -53,12 +55,14 @@ public class ArrayManipulation {
     }
 
     // Boucle while
+    // TODO : Sortir de la boucle dès que le caractère est trouvé
+    // TODO Javadoc
     public static int whileSequentielle(int[] arrayInt, int n) {
 
         int index = 0;
         int result = 0;
 
-        while (index < arrayInt.length ) {
+        while (index < arrayInt.length) {
             if (arrayInt[index] == n) {
                 System.out.println(arrayInt[index]);
                 result = index;
@@ -70,12 +74,15 @@ public class ArrayManipulation {
     }
 
     // Boucle do.. while
+    // TODO : Sortir de la boucle dès que le caractère est trouvé
+    // TODO Javadoc
+
     public static int doWhileSequentielle(int[] arrayInt, int n) {
 
         int index = 0;
         int result = 0;
         do {
-            if(arrayInt[index] == n) {
+            if (arrayInt[index] == n) {
                 System.out.println(arrayInt[index]);
                 result = index;
             }
@@ -85,8 +92,10 @@ public class ArrayManipulation {
         return result;
     }
 
+    // TODO Suivant le cahier des charges, l'index j est exclu de la somme
     /**
      * Addition des valeurs entre les index données d'un tableau
+     * 
      * @param indexA
      * @param indexB
      * @param array
@@ -163,6 +172,9 @@ public class ArrayManipulation {
     }
 
     // Recherce d'indices dans un tableau
+    // TODO Javadoc
+
+    // ✅ okay
     public static int[] indicesTableau(int[] array) {
         // Vérification du tableau > 2 indices
         if (array.length < 2) {
@@ -205,12 +217,16 @@ public class ArrayManipulation {
         return arrayResult;
     }
 
+    // ✅ Parfait
     /**
-     * Echange de valeurs entre 2 de valeurs identifié par leur index dans un tableau
+     * Echange de valeurs entre 2 de valeurs identifié par leur index dans un
+     * tableau
+     * 
      * @param indexA
      * @param indexB
      * @param array
-     * @return On retourne un boolean s'il l'échange ne peu pas être opérable ou est opéré
+     * @return On retourne un boolean s'il l'échange ne peu pas être opérable ou est
+     *         opéré
      */
     public static boolean swap(int indexA, int indexB, int[] array) {
         // Vérification du tableau > à 2 indices pour opérer un échange
@@ -218,7 +234,7 @@ public class ArrayManipulation {
             return false;
         }
 
-        if (indexA < array.length && indexB < array.length && indexA >-1 && indexB > -1) {
+        if (indexA < array.length && indexB < array.length && indexA > -1 && indexB > -1) {
             int tmp = array[indexB];
             array[indexB] = array[indexA];
             array[indexA] = tmp;
@@ -229,8 +245,12 @@ public class ArrayManipulation {
         }
     }
 
+    // TODO terminé le javadoc
+    // ✅ Nickel
+    //
     /**
      * Calcul de moyenne
+     * 
      * @param array
      * @return
      */
