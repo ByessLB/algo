@@ -1,24 +1,7 @@
 package fr.apfa;
 
 public class Iteration {
-    public static void main(String[] args) throws Exception {
 
-        // abonneesYoutubeAvecWhile();
-        abonneesYoutubeAvecFor();
-        // sommeEntiers(14);
-        // fizzBuzz(18);
-        // factorielle(5);
-    }
-
-<<<<<<< Updated upstream
-    // TODO ajouter les commentaires en javadoc /** */
-    // tu peux également retourner le résultat afin de pouvoir mettre en place des
-    // tests unitaires et prendre le mois et les abonnées en paramètres
-
-    // TODO JAMAIS d'accent sur les noms de variables
-
-=======
->>>>>>> Stashed changes
     /**
      * Abonné.e.s Youtube avec while
      * 

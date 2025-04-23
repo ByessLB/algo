@@ -5,51 +5,13 @@ import java.util.Scanner;
 
 public class ArrayManipulation {
 
-    public static void main(String[] args) throws Exception {
-
-        // Itération sur un tableau
-        double[] arrayDouble = { 12.2, 11.3, 4.4, 2.0 };
-        int[] arrayTest = { 2, 5, 6, 4, 8, 10, 15, 13, 6, 36 };
-
-        int[] array = { 2, 5, 6, 4, 8, 10, 15, 13, 6, 36 };
-        int[] array2 = { -1, 6, 125, 18, 4, 6, 78, 98, 164, 34, 2, 88, 4 };
-        int[] array3 = { -125, 102, 48, 37, -12, 98, 222, 65, 11, 0, 2 };
-        int[] arrayNull = {};
-        int[] arrayNegative = { -2, -5, -6, -4, -8, -10, -15, -13, -6, -36 };
-
-        // doWhileSequentielle();
-
-        // sommeIndexInArray(2, 5);
-        // sommeIndexInArray(2, 5, arrayTest);
-
-        // indicesTableau(arrayTest);
-
-        // swap(3, 9, arrayTest);
-        // System.out.println(calculMoyenne(arrayNegative));
-
-        // manipulationTableauParSaisie();
-
-        // invert(array);
-
-        // sumIndexArray(3, 6, array);
-    }
-
-
-    // Boucle for
-<<<<<<< Updated upstream
-    // TODO Javadoc
-
-    // ✅ okay
-=======
-
     // ✅ okay
     /**
-     * Recherche séquentielle
+     * Recherche séquentielle avec boucle FOR
      * @param array
      * @param n
      * @return Elément n
      */
->>>>>>> Stashed changes
     public static int forSequentielle(int[] array, int n) {
 
         int result = 0;
@@ -65,18 +27,12 @@ public class ArrayManipulation {
         return result;
     }
 
-    // Boucle while
-<<<<<<< Updated upstream
-    // TODO : Sortir de la boucle dès que le caractère est trouvé
-    // TODO Javadoc
-=======
     /**
-     * Recherhe séquentielle
+     * Recherhe séquentielle avec boucle WHILE
      * @param arrayInt
      * @param n
      * @return Elément n
      */
->>>>>>> Stashed changes
     public static int whileSequentielle(int[] arrayInt, int n) {
 
         int index = 0;
@@ -94,20 +50,12 @@ public class ArrayManipulation {
         return result;
     }
 
-    // Boucle do.. while
-<<<<<<< Updated upstream
-    // TODO : Sortir de la boucle dès que le caractère est trouvé
-    // TODO Javadoc
-
-=======
-
 /**
- * Recherche séquentielle
+ * Recherche séquentielle avec boucle DO...WHILE
  * @param arrayInt
  * @param n
  * @return Elément n
  */
->>>>>>> Stashed changes
     public static int doWhileSequentielle(int[] arrayInt, int n) {
 
         int index = 0;
@@ -124,7 +72,6 @@ public class ArrayManipulation {
         return result;
     }
 
-    // TODO Suivant le cahier des charges, l'index j est exclu de la somme
     /**
      * Addition des valeurs entre les index données d'un tableau
      * 
@@ -204,11 +151,6 @@ public class ArrayManipulation {
     }
 
     // Recherce d'indices dans un tableau
-<<<<<<< Updated upstream
-    // TODO Javadoc
-
-    // ✅ okay
-=======
 
     // ✅ okay
     /**
@@ -216,7 +158,6 @@ public class ArrayManipulation {
      * @param array
      * @return Array comprenant les indices des valeurs MIN et MAX d'un tableau
      */
->>>>>>> Stashed changes
     public static int[] indicesTableau(int[] array) {
         // Vérification du tableau > 2 indices
         if (array.length < 2) {
@@ -287,10 +228,6 @@ public class ArrayManipulation {
         }
     }
 
-<<<<<<< Updated upstream
-    // TODO terminé le javadoc
-=======
->>>>>>> Stashed changes
     // ✅ Nickel
     //
     /**

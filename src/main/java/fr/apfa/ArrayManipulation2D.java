@@ -3,14 +3,14 @@ package fr.apfa;
 public class ArrayManipulation2D {
     public static void main(String[] args) throws Exception {
         // Elements pour exercice
-        int[][] array2D = { { 4, 6, 5 }, { 7, 11, 34 }, { 28, 6, 2 }, { 1, 2, 3 }, { 4, 3, 10 } };
-        int[][] array2D2 = { { 4, 6, 5, 2 }, { 7, 11, 34, 1 }, { 28, 6, 2, 15 }, { 1, 2, 3, 19 } };
-        int width = 3;
-        int height = 5;
-        int diagonalType = 2;
+        // int[][] array2D = { { 4, 6, 5 }, { 7, 11, 34 }, { 28, 6, 2 }, { 1, 2, 3 }, { 4, 3, 10 } };
+        // int[][] array2D2 = { { 4, 6, 5, 2 }, { 7, 11, 34, 1 }, { 28, 6, 2, 15 }, { 1, 2, 3, 19 } };
+        // int width = 3;
+        // int height = 5;
+        // int diagonalType = 2;
 
         // Appel des méthodes et utilisation des éléments
-        System.out.println("Somme des valeurs du tableau tableau = " + sumArrays(array2D));
+        // System.out.println("Somme des valeurs du tableau tableau = " + sumArrays(array2D));
         // sommeValeursEnDiagonale(array2D, width, height, diagonalType);
     }
 

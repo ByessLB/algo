@@ -6,7 +6,7 @@ public class BinaryConversion {
     //     base10("00000001");
         base10("100");
     //     base10("101011");
-        base10("111111111");
+        // base10("111111111");
     //     base10("11110000");
 
     // base10aBinaire(43);
@@ -14,20 +14,16 @@ public class BinaryConversion {
 
     /**
      * Conversion binaire vers base10
-     * @param chaine
+     * @param string
      * @return int
      */
-    public static Integer base10(String chaine) {
-        String[] tmpArray;
-        int[] array = new int[chaine.length()];
+    public static Integer base10(String string) {
+        int[] array = new int[string.length()];
         int decimal = 0;
 
-        // Destruction et incorporation d'unité dans un tableau
-        tmpArray = chaine.split("");
-
-        // Intégration et transformation en entier des valeurs du tableau précédent
-        for (int i = tmpArray.length -1; i >= 0; i--) {
-            array[i] = Integer.parseInt(tmpArray[i]);
+        // Intégration et transformation en entier des valeurs de la chaîne
+        for (int i = string.length() -1; i >= 0; i--) {
+            array[i] = Character.getNumericValue(string.charAt(i));
         }
 
         // Conversion du tableau binaire en base 10
