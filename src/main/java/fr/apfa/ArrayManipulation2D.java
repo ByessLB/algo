@@ -5,15 +5,17 @@ public class ArrayManipulation2D {
         // Elements pour exercice
         int[][] array2D = { { 4, 6, 5 }, { 7, 11, 34 }, { 28, 6, 2 }, { 1, 2, 3 }, { 4, 3, 10 } };
         int[][] array2D2 = { { 4, 6, 5, 2 }, { 7, 11, 34, 1 }, { 28, 6, 2, 15 }, { 1, 2, 3, 19 } };
-        int width = 4;
-        int height = 4;
+        int width = 3;
+        int height = 5;
         int diagonalType = 2;
 
         // Appel des méthodes et utilisation des éléments
-        // sumArrays(array2D);
-        sommeValeursEnDiagonale(array2D2, width, height, diagonalType);
+        System.out.println("Somme des valeurs du tableau tableau = " + sumArrays(array2D));
+        // sommeValeursEnDiagonale(array2D, width, height, diagonalType);
     }
 
+    // Remarque : il est plus logique de faire l'affichage dans le main
+    // ✅ Okay
     /**
      * Somme des valeurs d'un tableau 2D
      * 
@@ -31,10 +33,13 @@ public class ArrayManipulation2D {
             }
         }
 
-        System.out.println("Somme des valeurs du tableau tableau = " + result);
+        // System.out.println("Somme des valeurs du tableau tableau = " + result);
         return result;
     }
 
+    // Il serait plus logique de faire un if / else pour initialiser columnIndex et
+    // diagonalStep
+    // ✅ Okay
     /**
      * Somme des valeurs d'un tableau2D sur une diagonale
      * 
@@ -53,7 +58,7 @@ public class ArrayManipulation2D {
         if (array == null || width != height || width != array.length || diagonale < 1 || diagonale > 2) {
             return -1;
         } else if (diagonale == 2) {
-            columnIndex = array[0].length -1;
+            columnIndex = array[0].length - 1;
             diagonalStep = -1;
         }
 

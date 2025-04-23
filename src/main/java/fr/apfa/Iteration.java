@@ -11,10 +11,14 @@ public class Iteration {
     }
 
     // TODO ajouter les commentaires en javadoc /** */
-    // tu peux également retourner le résultat afin de pouvoir mettre en place des tests unitaires et prendre le mois et les abonnées en paramètres
+    // tu peux également retourner le résultat afin de pouvoir mettre en place des
+    // tests unitaires et prendre le mois et les abonnées en paramètres
+
+    // TODO JAMAIS d'accent sur les noms de variables
 
     /**
      * Abonné.e.s Youtube avec while
+     * 
      * @return int total
      */
     public static int abonneesYoutubeAvecWhile() {
@@ -48,9 +52,10 @@ public class Iteration {
         }
     }
 
-    //✅ nice!
+    // ✅ nice!
     /**
      * Somme des entiers de 0 à n
+     * 
      * @param n
      * @return
      */
@@ -66,6 +71,7 @@ public class Iteration {
     // ✅checked!
     /**
      * <h3>FizzBuzz</h3>
+     * 
      * @param n valeur maximale à atteindre
      * @return la chaine fizzbuzz
      */
@@ -90,8 +96,10 @@ public class Iteration {
     // ✅ okay
     /**
      * <h3>Factorielle</h3>
+     * 
      * @param n
-     * @return produit des nombres entiers strictement positifs inférieurs ou égaux à <strong>n</strong>.
+     * @return produit des nombres entiers strictement positifs inférieurs ou égaux
+     *         à <strong>n</strong>.
      */
     public static int factorielle(int n) {
         int factorielle = 1;
