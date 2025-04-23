@@ -42,4 +42,14 @@ public class ArrayManipulation2DTest {
         assertEquals(-1, resultErr2);
         assertEquals(-1, resultErr3);
     }
+
+    @Test
+    void testSommeValeursEnDiagonale() {
+        
+    }
+
+    @Test
+    void testSumArrays() {
+        
+    }
 }

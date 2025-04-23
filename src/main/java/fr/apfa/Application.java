@@ -126,17 +126,14 @@ public class Application {
                 matrimonial = matrimonialInput.charAt(0);
             } else {
                 System.out.println("Erreur : état matrimonial non valide.");
-                continue;
             }
             if (matrimonial == 'N') {
                 System.out.println("Merci d'avoir utilisé notre service !");
                 continuer = false;
-                continue;
             }
 
             if (matrimonial != 'C' && matrimonial != 'A') {
                 System.out.println("Erreur : état matrimonial non valide.");
-                continue;
             }
 
             // Récupération donnée enfants
@@ -145,18 +142,15 @@ public class Application {
             if (caractèreEnfants.equals("N")) {
                 System.out.println("Merci d'avoir utilisé notre service !");
                 continuer = false;
-                continue;
             }
-            int enfants;
+            int enfants = 0;
             try {
                 enfants = Integer.parseInt(caractèreEnfants);
                 if (enfants < 0) {
                     System.out.println("Erreur : nombre d'enfants non valide.");
-                    continue;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Erreur : nombre d'enfants non valide.");
-                continue;
             }
 
             // Récupération du salaire
@@ -165,19 +159,16 @@ public class Application {
             if (salaireInput.equals("N")) {
                 System.out.println("Merci d'avoir utilisé notre service !");
                 continuer = false;
-                continue;
             }
 
-            double salaire;
+            double salaire = 0;
             try {
                 salaire = Double.parseDouble(salaireInput);
                 if (salaire < 0) {
                     System.out.println("Erreur : salaire non valide.");
-                    continue;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Erreur : salaire non valide.");
-                continue;
             }
 
             // Initialisation du taux
@@ -213,7 +204,6 @@ public class Application {
             char charReponse = scanner.next().charAt(0);
             char reponse = Character.toUpperCase(charReponse);
             if (reponse == 'O') {
-                continue;
             } else if (reponse == 'N') {
                 System.out.println("Merci d'avoir utilisé notre service !");
                 continuer = false;

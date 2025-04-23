@@ -8,8 +8,8 @@ public class StringManipulation {
         // decompteVoyelle("AnacondA");
         // countUpperCase("Je Suis une Fougère!");
         // mirror("erèguoF enu siuS eJ");
-        // camelCase("Je Suis Une Fougère");
-        localisationStringOnString("Mon nom est Personne.", "Personne");
+        camelCase("Je suis une fougère");
+        // localisationStringOnString("Mon nom est Personne.", "Personne");
     }
 
     /**
@@ -27,6 +27,17 @@ public class StringManipulation {
         voyelle.add('o');
         voyelle.add('u');
         voyelle.add('y');
+        voyelle.add('à');
+        voyelle.add('é');
+        voyelle.add('è');
+        voyelle.add('ù');
+        voyelle.add('ê');
+        voyelle.add('â');
+        voyelle.add('ë');
+        voyelle.add('î');
+        voyelle.add('ï');
+        voyelle.add('ö');
+        voyelle.add('ù');
 
         chaine = chaine.toLowerCase();
         int count = 0;
@@ -88,11 +99,27 @@ public class StringManipulation {
     /**
      * CamelCase
      * @param chaine
-     * @return String Retourne une chaine sans espace
+     * @return String Retourne une chaine en camelCase
      */
     public static String camelCase(String chaine) {
-        System.out.println(chaine.replaceAll(" ", ""));
-        return chaine.replaceAll(" ", "");
+        if(chaine == null || chaine.isEmpty()) {
+            return chaine;
+        }
+
+        String[] tmpArray = chaine.split(" ");
+        StringBuilder camelCaseString = new StringBuilder();
+
+        for (int index = 0; index < tmpArray.length; index++) {
+            if (index == 0) {
+                camelCaseString.append(tmpArray[index].toLowerCase());
+            } else {
+                camelCaseString.append(tmpArray[index].substring(0, 1).toUpperCase())
+                               .append(tmpArray[index].substring(1).toLowerCase());
+            }
+        }
+
+        System.out.println(camelCaseString.toString());
+        return camelCaseString.toString();
     }
 
     /**
@@ -106,7 +133,7 @@ public class StringManipulation {
         int lastIndexOfChaine = 0;
         if (chaine.contains(sousChaine)) {
             firstIndexOfChaine = chaine.indexOf(sousChaine);
-            lastIndexOfChaine = chaine.lastIndexOf(sousChaine) + sousChaine.length() -1;
+            lastIndexOfChaine = chaine.indexOf(sousChaine) + sousChaine.length() -1;
         } else {
             firstIndexOfChaine = -1;
             lastIndexOfChaine = -1;
