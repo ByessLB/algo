@@ -33,4 +33,12 @@ class IterationTest {
         // Then
         assertEquals(3628800, result);
     }
+
+    @Test
+    void testAbonneesYoutubeAvecWhile() {
+
+        int test = Iteration.abonneesYoutubeAvecWhile(24, 2500);
+
+        assertEquals(8063, test);
+    }
 }

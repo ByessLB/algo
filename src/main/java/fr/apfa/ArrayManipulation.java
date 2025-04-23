@@ -34,12 +34,22 @@ public class ArrayManipulation {
         // sumIndexArray(3, 6, array);
     }
 
-    // Recherche séquentielle
 
     // Boucle for
+<<<<<<< Updated upstream
     // TODO Javadoc
 
     // ✅ okay
+=======
+
+    // ✅ okay
+    /**
+     * Recherche séquentielle
+     * @param array
+     * @param n
+     * @return Elément n
+     */
+>>>>>>> Stashed changes
     public static int forSequentielle(int[] array, int n) {
 
         int result = 0;
@@ -48,6 +58,7 @@ public class ArrayManipulation {
             if (array[index] == n) {
                 System.out.println("Le milieu : " + array[index]);
                 result = index;
+                break;
             }
         }
 
@@ -55,8 +66,17 @@ public class ArrayManipulation {
     }
 
     // Boucle while
+<<<<<<< Updated upstream
     // TODO : Sortir de la boucle dès que le caractère est trouvé
     // TODO Javadoc
+=======
+    /**
+     * Recherhe séquentielle
+     * @param arrayInt
+     * @param n
+     * @return Elément n
+     */
+>>>>>>> Stashed changes
     public static int whileSequentielle(int[] arrayInt, int n) {
 
         int index = 0;
@@ -66,6 +86,7 @@ public class ArrayManipulation {
             if (arrayInt[index] == n) {
                 System.out.println(arrayInt[index]);
                 result = index;
+                break;
             }
             index++;
         }
@@ -74,9 +95,19 @@ public class ArrayManipulation {
     }
 
     // Boucle do.. while
+<<<<<<< Updated upstream
     // TODO : Sortir de la boucle dès que le caractère est trouvé
     // TODO Javadoc
 
+=======
+
+/**
+ * Recherche séquentielle
+ * @param arrayInt
+ * @param n
+ * @return Elément n
+ */
+>>>>>>> Stashed changes
     public static int doWhileSequentielle(int[] arrayInt, int n) {
 
         int index = 0;
@@ -85,6 +116,7 @@ public class ArrayManipulation {
             if (arrayInt[index] == n) {
                 System.out.println(arrayInt[index]);
                 result = index;
+                break;
             }
             index++;
         } while (index < arrayInt.length);
@@ -106,7 +138,7 @@ public class ArrayManipulation {
         int sum = 0;
 
         if (indexA < indexB && indexA < array.length && indexB < array.length && indexA > -1) {
-            for (int index = indexA; index <= indexB; index++) {
+            for (int index = indexA; index < indexB; index++) {
                 sum += array[index];
             }
         } else {
@@ -172,9 +204,19 @@ public class ArrayManipulation {
     }
 
     // Recherce d'indices dans un tableau
+<<<<<<< Updated upstream
     // TODO Javadoc
 
     // ✅ okay
+=======
+
+    // ✅ okay
+    /**
+     * Recherche d'indices dans un tableau
+     * @param array
+     * @return Array comprenant les indices des valeurs MIN et MAX d'un tableau
+     */
+>>>>>>> Stashed changes
     public static int[] indicesTableau(int[] array) {
         // Vérification du tableau > 2 indices
         if (array.length < 2) {
@@ -245,14 +287,17 @@ public class ArrayManipulation {
         }
     }
 
+<<<<<<< Updated upstream
     // TODO terminé le javadoc
+=======
+>>>>>>> Stashed changes
     // ✅ Nickel
     //
     /**
      * Calcul de moyenne
      * 
      * @param array
-     * @return
+     * @return Integer : moyenne des valeurs d'un tableau
      */
     public static Integer calculMoyenne(int[] array) {
         try {

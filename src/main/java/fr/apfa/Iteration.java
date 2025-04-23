@@ -4,33 +4,34 @@ public class Iteration {
     public static void main(String[] args) throws Exception {
 
         // abonneesYoutubeAvecWhile();
-        // abonneesYoutubeAvecFor();
+        abonneesYoutubeAvecFor();
         // sommeEntiers(14);
         // fizzBuzz(18);
         // factorielle(5);
     }
 
+<<<<<<< Updated upstream
     // TODO ajouter les commentaires en javadoc /** */
     // tu peux également retourner le résultat afin de pouvoir mettre en place des
     // tests unitaires et prendre le mois et les abonnées en paramètres
 
     // TODO JAMAIS d'accent sur les noms de variables
 
+=======
+>>>>>>> Stashed changes
     /**
      * Abonné.e.s Youtube avec while
      * 
      * @return int total
      */
-    public static int abonneesYoutubeAvecWhile() {
-        int mois = 24;
-        double abonnées = 2500;
+    public static int abonneesYoutubeAvecWhile(int mois, double abonnees) {
         int index = 1;
         int total = 0;
 
-        System.out.println("Abonné.e.s Youtube : " + abonnées);
+        System.out.println("Abonné.e.s Youtube : " + abonnees);
 
         while (index <= mois) {
-            total = (int) Math.ceil(abonnées *= 1.05);
+            total = (int) Math.ceil(abonnees *= 1.05);
             System.out.println("Abonné.e.s Youtube : " + total);
             index++;
         }
@@ -42,12 +43,12 @@ public class Iteration {
      */
     public static void abonneesYoutubeAvecFor() {
         int mois = 24;
-        double abonnées = 2500;
+        double abonnees = 2500;
 
-        System.out.println("Abonné.e.s Youtube : " + abonnées);
+        System.out.println("Abonné.e.s Youtube : " + abonnees);
 
         for (int index = 1; index <= mois; index++) {
-            int total = (int) Math.ceil(abonnées *= 1.05);
+            int total = (int) Math.ceil(abonnees *= 1.05);
             System.out.println("Abonné.e.s Youtube : " + total);
         }
     }
