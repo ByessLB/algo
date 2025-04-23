@@ -10,6 +10,7 @@ public class Pyramide {
         pyramideIsocele(4);
     }
 
+    // ✅ well done!
     /**
      * <h3>Pyramide rectangle</h3>
      * 
@@ -34,6 +35,7 @@ public class Pyramide {
         }
     }
 
+    // ✅ well done!
     /**
      * <h3>Pyramide Isocèle</h3>
      * 
