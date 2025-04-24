@@ -8,6 +8,7 @@ public class ArrayManipulation {
     // ✅ okay
     /**
      * Recherche séquentielle avec boucle FOR
+     * 
      * @param array
      * @param n
      * @return Elément n
@@ -29,6 +30,7 @@ public class ArrayManipulation {
 
     /**
      * Recherhe séquentielle avec boucle WHILE
+     * 
      * @param arrayInt
      * @param n
      * @return Elément n
@@ -50,12 +52,13 @@ public class ArrayManipulation {
         return result;
     }
 
-/**
- * Recherche séquentielle avec boucle DO...WHILE
- * @param arrayInt
- * @param n
- * @return Elément n
- */
+    /**
+     * Recherche séquentielle avec boucle DO...WHILE
+     * 
+     * @param arrayInt
+     * @param n
+     * @return Elément n
+     */
     public static int doWhileSequentielle(int[] arrayInt, int n) {
 
         int index = 0;
@@ -155,6 +158,7 @@ public class ArrayManipulation {
     // ✅ okay
     /**
      * Recherche d'indices dans un tableau
+     * 
      * @param array
      * @return Array comprenant les indices des valeurs MIN et MAX d'un tableau
      */
@@ -265,53 +269,52 @@ public class ArrayManipulation {
      * Manipulation de tableau d'entiers et saisie utilisateur
      */
     public static void manipulationTableauParSaisie() {
-        // Intégration du scanner
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            // Message affiché en console
+            System.out.println("Veuillez choisir un nombre de valeurs à saisir : ");
 
-        // Message affiché en console
-        System.out.println("Veuillez choisir un nombre de valeurs à saisir : ");
+            // Attente de la saisie utilisateur
+            int arraySize = scanner.nextInt();
 
-        // Attente de la saisie utilisateur
-        int arraySize = scanner.nextInt();
+            // Déclaration du tableau de taille "arraySize"
+            int[] arrayToProcess = new int[arraySize];
 
-        // Déclaration du tableau de taille "arraySize"
-        int[] arrayToProcess = new int[arraySize];
+            System.out.println("-----");
 
-        System.out.println("-----");
+            // Récupération et installation de valeurs dans le tableau
+            int index = 0;
+            do {
+                index++;
+                System.out.println("Vueillez saisir le nombre " + index);
+                int valeur = scanner.nextInt();
+                arrayToProcess[index - 1] = valeur;
+            } while (index <= arrayToProcess.length - 1);
 
-        // Récupération et installation de valeurs dans le tableau
-        int index = 0;
-        do {
-            index++;
-            System.out.println("Vueillez saisir le nombre " + index);
-            int valeur = scanner.nextInt();
-            arrayToProcess[index - 1] = valeur;
-        } while (index <= arrayToProcess.length - 1);
+            System.out.println("Tableau de valeur : " + Arrays.toString(arrayToProcess));
+            System.out.println("-----");
 
-        System.out.println("Tableau de valeur : " + Arrays.toString(arrayToProcess));
-        System.out.println("-----");
+            // programme calcul moyenne && min/max
+            int maxVal = arrayToProcess[0];
+            int minVal = arrayToProcess[0];
+            int result = 0;
 
-        // programme calcul moyenne && min/max
-        int maxVal = arrayToProcess[0];
-        int minVal = arrayToProcess[0];
-        int result = 0;
-
-        for (index = 0; index <= arrayToProcess.length - 1; index++) {
-            result += arrayToProcess[index];
-            if (arrayToProcess[index] > maxVal) {
-                maxVal = arrayToProcess[index];
+            for (index = 0; index <= arrayToProcess.length - 1; index++) {
+                result += arrayToProcess[index];
+                if (arrayToProcess[index] > maxVal) {
+                    maxVal = arrayToProcess[index];
+                }
+                if (arrayToProcess[index] < minVal) {
+                    minVal = arrayToProcess[index];
+                }
             }
-            if (arrayToProcess[index] < minVal) {
-                minVal = arrayToProcess[index];
-            }
+
+            double moyenne = result / arrayToProcess.length;
+            System.out.println("Moyenne = " + (int) moyenne);
+            System.out.println("Minimum = " + minVal);
+            System.out.println("Maximum = " + maxVal);
+
+            scanner.close();
         }
-
-        double moyenne = result / arrayToProcess.length;
-        System.out.println("Moyenne = " + (int) moyenne);
-        System.out.println("Minimum = " + minVal);
-        System.out.println("Maximum = " + maxVal);
-
-        scanner.close();
     }
 
     // ✅ well done!

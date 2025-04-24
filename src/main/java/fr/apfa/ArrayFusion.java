@@ -1,7 +1,6 @@
 package fr.apfa;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 
 public class ArrayFusion {
@@ -9,7 +8,7 @@ public class ArrayFusion {
     public static void main(String[] args) {
         int[] tab1 = {2, 6, 1, 3, 5, 15};
         int[] tab2 = {4, 5, 4, 78, 1,3,2 ,54};
-        
+
         fusionDeTableau(tab1, tab2);
     }
 
