@@ -6,30 +6,26 @@ public class Palindrome {
 
     public static void main(String[] args) {
 
-        palindrome("KaéùYäk ?!czonvr-v.");
+        palindrome("Mon nom.");
     }
 
     public static boolean palindrome(String word) {
         if (word != null) {
 
             word = word.toLowerCase();
+            String drow = "";
 
             /*-----------------------------------------*/
-            // Permet de retirer les accents
+            // Permet de retirer les accents / les ponctuations / les espaces
             /*-----------------------------------------*/
             word = Normalizer.normalize(word, Normalizer.Form.NFD);
             word = word.replaceAll("[^\\p{ASCII}]", "");
-            /*-----------------------------------------*/
-            // Retire les ponctuation
             word = word.replaceAll("[\\p{Punct}]", "");
+            word = word.replaceAll(" ", "");
+            /*-----------------------------------------*/
 
-            System.out.println(word);
-
-            String[] tmpArray = word.split("");
-            StringBuilder drow = new StringBuilder();
-
-            for (int i = tmpArray.length - 1; i >= 0; i--) {
-                drow.append(tmpArray[i]);
+            for (int i = word.length() - 1; i >= 0; i--) {
+                drow += word.charAt(i);
             }
 
             if (word.equals(drow)) {

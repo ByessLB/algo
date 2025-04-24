@@ -8,14 +8,14 @@ public class BinaryConversionTest {
     @Test
     void testBase10() {
 
-        int quaranteTrois = BinaryConversion.base10("101011");
         int un = BinaryConversion.base10("00000001");
         int quatre = BinaryConversion.base10("100");
+        int quaranteTrois = BinaryConversion.base10("101011");
         int cinqCentOnze = BinaryConversion.base10("111111111");
 
-        assertEquals(43, quaranteTrois);
         assertEquals(1, un);
         assertEquals(4, quatre);
+        assertEquals(43, quaranteTrois);
         assertEquals(511, cinqCentOnze);
     }
 
