@@ -12,6 +12,7 @@ public class StringManipulation {
         // localisationStringOnString("Mon nom est Personne.", "Personne");
     }
 
+    // ✅ okay
     /**
      * <h3>Décompte voyelle</h3>
      * 
@@ -52,6 +53,7 @@ public class StringManipulation {
         return count;
     }
 
+    // ✅ Nickel
     /**
      * Décompte des majuscules dans une String
      * 
@@ -79,6 +81,7 @@ public class StringManipulation {
         return chaine.toUpperCase();
     }
 
+    // ✅ okay
     /**
      * Miroir d'une String
      * 
@@ -98,11 +101,12 @@ public class StringManipulation {
 
     /**
      * CamelCase
+     * 
      * @param chaine
      * @return String Retourne une chaine en camelCase
      */
     public static String camelCase(String chaine) {
-        if(chaine == null || chaine.isEmpty()) {
+        if (chaine == null || chaine.isEmpty()) {
             return chaine;
         }
 
@@ -114,7 +118,7 @@ public class StringManipulation {
                 camelCaseString.append(tmpArray[index].toLowerCase());
             } else {
                 camelCaseString.append(tmpArray[index].substring(0, 1).toUpperCase())
-                               .append(tmpArray[index].substring(1).toLowerCase());
+                        .append(tmpArray[index].substring(1).toLowerCase());
             }
         }
 
@@ -122,18 +126,23 @@ public class StringManipulation {
         return camelCaseString.toString();
     }
 
+    // Il serait intéressant de faire la recherche sans utiliser la méthode
+    // "contains" de java
+
     /**
      * Localisation d'une sous-chaîne de caractères
+     * 
      * @param chaine
      * @param sousChaine
-     * @return Array valeur du premier index de la sous chaine localisé ainsi de du dernier index
+     * @return Array valeur du premier index de la sous chaine localisé ainsi de du
+     *         dernier index
      */
     public static Integer[] localisationStringOnString(String chaine, String sousChaine) {
         int firstIndexOfChaine = 0;
         int lastIndexOfChaine = 0;
         if (chaine.contains(sousChaine)) {
             firstIndexOfChaine = chaine.indexOf(sousChaine);
-            lastIndexOfChaine = chaine.indexOf(sousChaine) + sousChaine.length() -1;
+            lastIndexOfChaine = chaine.indexOf(sousChaine) + sousChaine.length() - 1;
         } else {
             firstIndexOfChaine = -1;
             lastIndexOfChaine = -1;
@@ -146,6 +155,6 @@ public class StringManipulation {
         System.out.println("- premier index : " + firstIndexOfChaine);
         System.out.println("- dernier index : " + lastIndexOfChaine);
 
-        return new Integer[]{firstIndexOfChaine, lastIndexOfChaine};
+        return new Integer[] { firstIndexOfChaine, lastIndexOfChaine };
     }
 }

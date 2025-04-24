@@ -9,6 +9,7 @@ public class PlusMoins {
         plusMoins();
     }
 
+    // ✅ Bon algo
     public static void plusMoins() {
         // Instanciation d'un objet de la classe Random
         Random r = new Random();
