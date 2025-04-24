@@ -5,10 +5,12 @@ import java.text.Normalizer;
 public class Palindrome {
 
     public static void main(String[] args) {
+        System.out.println(palindrome("Mon nom."));
 
-        palindrome("Mon nom.");
     }
 
+    // ✅ okay
+    // TODO JavaDoc
     public static boolean palindrome(String word) {
         if (word != null) {
 
