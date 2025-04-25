@@ -1,51 +1,41 @@
 package fr.apfa;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Arrays;
 
 public class ArrayFusion {
 
-    public static void main(String[] args) {
-        int[] tab1 = { 2, 6, 1, 3, 5, 15 };
-        int[] tab2 = { 4, 5, 4, 78, 1, 3, 2, 54 };
+    public static int[] fusionDeTableau(int[] firstArray, int[] secondArray) {
+        // Trier les 2 tableaux
+        Arrays.sort(firstArray);
+        Arrays.sort(secondArray);
 
-        fusionDeTableau(tab1, tab2);
-    }
+        int[] finalArray = new int[firstArray.length + secondArray.length];
+        int firstIndex = 0, secondIndex = 0, finalIndex = 0;
 
-    // TODO : Je pense que l'exercice demandait un algo qui n'utilise pas la
-    // fonction sort
-    public static int[] fusionDeTableau(int[] array1, int[] array2) {
-
-        int[] finalArray = new int[array1.length + array2.length];
-        int i = 0;
-        int j = 0;
-
-        while (true) {
-            if (array1.length != null && )
+        // Fusionner les deux tableaux triés
+        while (firstIndex < firstArray.length && secondIndex < secondArray.length) {
+            if (firstArray[firstIndex] < secondArray[secondIndex]) {
+                finalArray[finalIndex++] = firstArray[firstIndex++];
+            } else {
+                finalArray[finalIndex++] = secondArray[secondIndex++];
+            }
         }
 
+        // Ajouter les éléments restants de array1, s'il y en a
+        while (firstIndex < firstArray.length) {
+            finalArray[finalIndex++] = firstArray[firstIndex++];
+        }
+
+        // Ajouter les éléments restants de array2, s'il y en a
+        while (secondIndex < secondArray.length) {
+            finalArray[finalIndex++] = secondArray[secondIndex++];
+        }
+
+        // Afficher le tableau final
+        for (int index = 0; index < finalArray.length; index++) {
+            System.out.println(finalArray[index]);
+        }
+
+        return finalArray;
     }
 }
-
-
-        // // Initialisation de la liste de réupération
-        // ArrayList<Integer> list = new ArrayList<>();
-
-        // if (array1 != null) {
-        //     // Intégration des valeurs du premier tableau dans la liste
-        //     for (int i = 0; i < array1.length; i++) {
-        //         list.add(array1[i]);
-        //     }
-        // }
-
-        // if (array2 != null) {
-        //     // Intégration des valeurs du second tableau dans la liste
-        //     for (int i = 0; i < array2.length; i++) {
-        //         list.add(array2[i]);
-        //     }
-        // }
-
-        // // Tri de la liste
-        // Collections.sort(list);
-
-        // return list;

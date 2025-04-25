@@ -13,7 +13,6 @@ public class BinaryConversion {
 
     // ✅ Bon algo mais il est important de respecter les rôles de chacun : la
     // fonction sert à calculer le décimal, c'est au main d'afficher le résultat
-    // TODO Corriger l'affichage du résultat
     /**
      * Conversion binaire vers base10
      * 
@@ -30,7 +29,6 @@ public class BinaryConversion {
             intTmp++;
         }
 
-        System.out.println(decimal);
         return decimal;
     }
 

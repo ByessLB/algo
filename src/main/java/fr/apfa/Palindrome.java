@@ -10,7 +10,11 @@ public class Palindrome {
     }
 
     // ✅ okay
-    // TODO JavaDoc
+    /**
+     * Palindrome
+     * @param word
+     * @return Retourne un booléen le palindrome est réussi
+     */
     public static boolean palindrome(String word) {
         if (word != null) {
 
