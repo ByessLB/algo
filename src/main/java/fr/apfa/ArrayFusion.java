@@ -6,7 +6,9 @@ public class ArrayFusion {
 
     /**
      * Fusionner 2 tableaux
-     * On recherche à fusionner 2 tableaux trié (ou à trier si cela n'est pas encore fait)
+     * On recherche à fusionner 2 tableaux trié (ou à trier si cela n'est pas encore
+     * fait)
+     * 
      * @param firstArray
      * @param secondArray
      * @return int[] FinalArray
@@ -18,7 +20,7 @@ public class ArrayFusion {
 
         int[] finalArray = new int[firstArray.length + secondArray.length];
         int firstIndex = 0, secondIndex = 0, finalIndex = 0;
-
+        // ✅ 👍
         // Fusionner les deux tableaux triés
         while (firstIndex < firstArray.length && secondIndex < secondArray.length) {
             if (firstArray[firstIndex] < secondArray[secondIndex]) {
