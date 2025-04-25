@@ -4,11 +4,6 @@ import java.text.Normalizer;
 
 public class Palindrome {
 
-    public static void main(String[] args) {
-        System.out.println(palindrome("Mon nom."));
-
-    }
-
     // ✅ okay
     /**
      * Palindrome
@@ -16,28 +11,31 @@ public class Palindrome {
      * @return Retourne un booléen le palindrome est réussi
      */
     public static boolean palindrome(String word) {
-        if (word != null) {
-
-            word = word.toLowerCase();
-            String drow = "";
-
-            /*-----------------------------------------*/
-            // Permet de retirer les accents / les ponctuations / les espaces
-            /*-----------------------------------------*/
-            word = Normalizer.normalize(word, Normalizer.Form.NFD);
-            word = word.replaceAll("[^\\p{ASCII}]", "");
-            word = word.replaceAll("[\\p{Punct}]", "");
-            word = word.replaceAll(" ", "");
-            /*-----------------------------------------*/
-
-            for (int i = word.length() - 1; i >= 0; i--) {
-                drow += word.charAt(i);
-            }
-
-            if (word.equals(drow)) {
-                return true;
-            }
+        if (word == null) {
+            return false;
         }
-        return false;
+
+        word = word.toLowerCase();
+
+        // Normaliser et nettoyer la chaîne
+        word = Normalizer.normalize(word, Normalizer.Form.NFD);
+        word = word.replaceAll("[^\\p{ASCII}]", "");
+        word = word.replaceAll("[\\p{Punct}]", "");
+        word = word.replaceAll("\\s+", "");
+
+        int left = 0;
+        int right = word.length() - 1;
+
+        // Comparer les caractères de chaque extrémité vers le centre
+        while (left < right) {
+            if (word.charAt(left) != word.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+
+        return true;
     }
+
 }

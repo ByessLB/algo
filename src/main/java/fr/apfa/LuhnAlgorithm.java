@@ -2,13 +2,15 @@ package fr.apfa;
 
 public class LuhnAlgorithm {
 
-    public static void main(String[] args) {
-
-
-
-
-    }
-
+    /**
+     * Algorithme de Luhn
+     * On souhaite retrouver la somme de chaque chiffre donné sachant que,
+     * on partant de droite, il faudra multiplié par 2 tout les chiffres
+     * en seconde position
+     * On devra retrouver "True" si le résultat est un multiple de 10
+     * @param cb
+     * @return boolean
+     */
     public static boolean algorithmeLuhn(String cb) {
 
         cb = cb.replaceAll(" ","");

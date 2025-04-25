@@ -4,6 +4,13 @@ import java.util.Arrays;
 
 public class ArrayFusion {
 
+    /**
+     * Fusionner 2 tableaux
+     * On recherche à fusionner 2 tableaux trié (ou à trier si cela n'est pas encore fait)
+     * @param firstArray
+     * @param secondArray
+     * @return int[] FinalArray
+     */
     public static int[] fusionDeTableau(int[] firstArray, int[] secondArray) {
         // Trier les 2 tableaux
         Arrays.sort(firstArray);

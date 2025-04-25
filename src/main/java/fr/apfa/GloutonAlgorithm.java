@@ -2,12 +2,13 @@ package fr.apfa;
 
 public class GloutonAlgorithm {
 
-    public static void main(String[] args) {
-
-
-    }
-
-
+    /**
+     * Algorithme Glouton
+     * On souhaite récupérer dans un tableau le nombre de chaque pièces utilisées selon
+     * la somme donné dans avec un résultat optimal.
+     * @param somme
+     * @return int[]
+     */
     public static int[] gloutonAlgorithm(double somme) {
 
         int[] pieces = {200, 100, 50, 20, 10, 5, 2, 1};
@@ -16,10 +17,10 @@ public class GloutonAlgorithm {
         if(somme != 0) {
             int newSomme = (int) (somme * 100);
 
-            for (int i = 0; i < pieces.length; i++) {
-                while ((newSomme - pieces[i]) >= 0) {
-                    newSomme = newSomme - pieces[i];
-                    nombrePiecesUtilisees[i]++;
+            for (int index = 0; index < pieces.length; index++) {
+                while ((newSomme - pieces[index]) >= 0) {
+                    newSomme = newSomme - pieces[index];
+                    nombrePiecesUtilisees[index]++;
                 }
             }
 
